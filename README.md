@@ -1,6 +1,9 @@
 # Project1
 
-
+David Schepis
+Hamin Kim
+Alix Borja
+Jules O'Neale
 
 API
 https://rapidapi.com/lduran2@gmail.com/api/pokedex2/
