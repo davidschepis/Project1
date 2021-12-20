@@ -1,12 +1,18 @@
 # Project1
 
 David Schepis
+
 Hamin Kim
+
 Alix Borja
+
 Jules O'Neale
 
+
 API
+
 https://rapidapi.com/lduran2@gmail.com/api/pokedex2/
+
 
 https://rapidapi.com/orthosie/api/name-generation/
 
@@ -15,10 +21,10 @@ utilize a name generator to name their pokemon. They can select from certain cri
 
 Webpages: 
 index.html
-One website to search for a pokemon and it returns their info --Jules
+pokesearch.html One website to search for a pokemon and it returns their info --Jules
     Saves recent searches
-One website to generate a name based on criteria --Alix
-One website to battle pokemon simply based on their type --David
-One website to return a random team of 6 pokemon --Joe
+namegenerator.html One website to generate a name based on criteria --Alix
+battle.html One website to battle pokemon simply based on their type --David
+myteam.html One website to return a random team of 6 pokemon --Joe
 
 CSS Alternative: https://bulma.io/
