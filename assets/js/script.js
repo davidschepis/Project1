@@ -6,7 +6,7 @@ document.getElementById("searchButton").addEventListener("click", handleSearch);
 
 
 function handleSearch() {
-	var pokename = document.getElementById("searchText").value;
+	var pokename = document.getElementById("searchText").value.toLowerCase();
 
 	var url = "https://pokedex2.p.rapidapi.com/pokedex/us/" + pokename;
 
