@@ -22,20 +22,11 @@ function handleSearch() {
 		return response.json();
 	}).then(function (data) {
 		console.log(data);
-		var outputstring = "";
-		outputstring += "<img src=" + data[0].ThumbnailImage + "></img>";
-		outputstring += "<h1>The pokemon's id number is: " + data[0].id + "</h1>";
-		outputstring += "<h1>The pokemon's name is: " + data[0].name + "</h1>";
-		for (var i = 0; i < data[0].type.length; i++) {
-			outputstring += "<h1>The pokemon's type is: " + data[0].type[i] + "</h1>";
-		}
-		for (var i = 0; i < data[0].weakness.length; i++) {
-			outputstring += "<h1>The pokemon's weakness is: " + data[0].weakness[i] + "</h1>";
-		}
+		var outputstring = '<div class="card"><div class="card-image"><figure class="image is-4by3"><img src="' + data[0].ThumbnailImage + '" alt="Placeholder image"></figure></div><div class="card-content"><div class="media"><div class="media-left"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"></figure></div><div class="media-content"><p class="title is-4">John Smith</p><p class="subtitle is-6">@johnsmith</p></div></div>';
 		document.getElementById("result").innerHTML = outputstring;
 	});
 }
 
 function showBattleScreen() {
-	
+
 }
