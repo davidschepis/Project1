@@ -23,7 +23,12 @@ function showBattleScreen() {
         var outputstring = "<img src='"+data[number].ThumbnailImage+"'>";
         console.log(number)
         console.log(outputstring)
-        document.getElementById("battleSection").innerHTML = outputstring
+        document.getElementById("battleSection2").innerHTML = outputstring;
+
+        var number = Math.floor(Math.random() * data.length)
+        outputstring = "<img src='"+data[number].ThumbnailImage+"'>";
+        document.getElementById("battleSection1").innerHTML = outputstring;
+
     });
     
     

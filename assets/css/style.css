@@ -1,0 +1,8 @@
+#battle {
+    position:absolute;
+    top: 200px;
+}
+
+.battleColumn {
+    border: solid 1px black;
+}
