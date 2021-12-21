@@ -1,5 +1,5 @@
 var mainSection = $('#mainSection');
-var key = "67cb78248emsh1e4e33cf18493bcp19763bjsne115c744c684";
+var key = "98c7599992msh5ea6f0b3a380ff5p13b5bbjsn24e983bd9684";
 
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
@@ -22,6 +22,7 @@ function handleSearch() {
 		console.log(data);
 		var outputstring = "";
 		outputstring += "<img src=" + data[0].ThumbnailImage + "></img>";
+		outputstring += "<h1>The pokemon's id number is: " + data[0].id + "</h1>";
 		outputstring += "<h1>The pokemon's name is: " + data[0].name + "</h1>";
 		for (var i = 0; i < data[0].type.length; i++) {
 			outputstring += "<h1>The pokemon's type is: " + data[0].type[i] + "</h1>";
