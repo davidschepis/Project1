@@ -12,5 +12,5 @@ fetch(url, {
     return response.json();
 }).then(function (data) {
     console.log(data);
-    mainSection.text(data[0].name); //print the pokemons name to the page
+    //mainSection.text(data[0].name); //print the pokemons name to the page
 });
