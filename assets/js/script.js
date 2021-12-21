@@ -1,8 +1,10 @@
 var mainSection = $('#mainSection');
+var battleSection = $('#battleSection');
 var key = "98c7599992msh5ea6f0b3a380ff5p13b5bbjsn24e983bd9684";
 
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
+showBattleScreen();
 
 
 function handleSearch() {
@@ -30,9 +32,10 @@ function handleSearch() {
 		for (var i = 0; i < data[0].weakness.length; i++) {
 			outputstring += "<h1>The pokemon's weakness is: " + data[0].weakness[i] + "</h1>";
 		}
-	
-
 		document.getElementById("result").innerHTML = outputstring;
 	});
 }
 
+function showBattleScreen() {
+	
+}
