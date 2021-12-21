@@ -23,7 +23,8 @@ function handleSearch() {
 		var outputstring = "";
 		outputstring += "<h1>The pokemon's name is: " + data[0].name + "</h1>";
 		for (var i = 0; i < data[0].type.length; i++) {
-			outputstring += "<h1>The pokemon's type is: " + data[0].type[i] + "</h1>";
+			outputstring += "<h1>The pokemon's type is/are: " + data[0].type[i] + "</h1>";
+			outputstring += "<h1>The pokemon's weakness is/are: " + data[0].weakness[i] + "</h1>";
 		}
 		document.getElementById("result").innerHTML = outputstring;
 	});
