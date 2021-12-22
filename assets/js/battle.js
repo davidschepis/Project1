@@ -21,17 +21,17 @@ function showBattleScreen() {
         var number = Math.floor(Math.random() * data.length);
         img1.attr("src", data[number].ThumbnailImage);
         battleSection1.append(img1);
+        var button = $('<button>');
+        button.addClass("button");
+        button.addClass("is-primary");
+        button.text("Attack");
+        button.attr("id", "attackButton");
+        battleSection1.append(button);
         
         var img2 = $('<img>');
         var number = Math.floor(Math.random() * data.length);
         img2.attr("src", data[number].ThumbnailImage);
         battleSection2.append(img2);
-
-
-
-
-
-
 
 
         
