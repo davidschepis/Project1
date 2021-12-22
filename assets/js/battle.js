@@ -1,6 +1,11 @@
 var battleSection1 = $('#battleSection1');
 var battleSection2 = $('#battleSection2');
+
 var key = "daf5d28d8bmsh62dd27af51040efp16ff14jsn47ca0180b1c4";
+
+
+var userHealth = 100;
+var compHealth = 100;
 
 showBattleScreen()
 
@@ -36,4 +41,36 @@ function showBattleScreen() {
 
         
     });
+}
+
+$('body').on('click', '#attackButton', function() {
+    var number = Math.floor(Math.random() * 100);
+    compHealth -= number;
+    if (compHealth <= 0) {
+        showWin();
+    }
+    $('#compHealth').val(compHealth);
+    var audio = new Audio('./assets/music/hit.mp3');
+    audio.play();
+
+    number = Math.floor(Math.random() * 100);
+    userHealth -= number;
+    if (userHealth <= 0) {
+        showLose();
+    }
+    $('#playerHealth').val(userHealth);
+});
+
+function showWin() {
+    var h1 = $('<h1>');
+    h1.text("You're winner!");
+    battle.text("");
+    battle.append(h1);
+}
+
+function showLose() {
+    var h1 = $('<h1>');
+    h1.text("You is loser!");
+    battle.text("");
+    battle.append(h1);
 }
