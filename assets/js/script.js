@@ -1,5 +1,9 @@
 var mainSection = $('#mainSection');
+
+var battleSection = $('#battleSection');
 var key = "daf5d28d8bmsh62dd27af51040efp16ff14jsn47ca0180b1c4";
+
+
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
 document.querySelector
