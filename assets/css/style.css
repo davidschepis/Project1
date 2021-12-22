@@ -1,27 +1,7 @@
-#searchPage {
-    background: linear-gradient(#DD0000, #FFFF);
+.card {
+    height: 100%;
+    margin-right: 100px;
 }
-
-#result {
-    background: linear-gradient(to bottom, #e9fbf6, #a4bcd4 50%, #5286c7 75%, #0bE91a 75%)
-}
-
-
 #battle {
-    position:absolute;
-    top: 200px;
-}
-
-.battleColumn {
-    border: solid 1px black;
-}
-
-.container {
-    justify-content: start;
-}
-
-#battleLink {
-    padding: 0%;
-    margin-left: 0%;
-
+    margin-top: 100px;
 }
