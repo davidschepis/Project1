@@ -1,5 +1,5 @@
 var mainSection = $('#mainSection');
-var key = "98c7599992msh5ea6f0b3a380ff5p13b5bbjsn24e983bd9684";
+var key = "daf5d28d8bmsh62dd27af51040efp16ff14jsn47ca0180b1c4";
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
 document.querySelector
@@ -29,8 +29,26 @@ function handleSearch() {
 			outputstring += "<h1>The pokemon's weakness is: " + data[0].weakness[i] + "</h1>";
 		}
 		document.getElementById("result").innerHTML = outputstring;
+
+		localStorage.setItem("pokename", pokename)
+
+		showBattleButton()
 	});
 }
+
+function showBattleButton() {
+	var bb = document.getElementById("battleLink");
+
+	bb.style.visibility = "visible"
+
+}
+
+$('body').on('click', '#battleLink', function() {
+	localStorage.getItem("pokename")
+	window.location.href = "battle.html";
+
+});
+
 
 function showBattleScreen() {
 	var randoPokemon
