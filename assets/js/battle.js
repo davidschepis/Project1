@@ -68,6 +68,7 @@ function showWin() {
     battle.append(h1);
 }
 
+//THis function
 function showLose() {
     var h1 = $('<h1>');
     h1.text("You is loser!");
