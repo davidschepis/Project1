@@ -1,12 +1,9 @@
 var mainSection = $('#mainSection');
-var battleSection = $('#battleSection');
 var key = "98c7599992msh5ea6f0b3a380ff5p13b5bbjsn24e983bd9684";
-
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
 document.querySelector
 showBattleScreen();
-
 
 function handleSearch() {
 	var pokename = document.getElementById("searchText").value.toLowerCase();
@@ -36,21 +33,21 @@ function handleSearch() {
 }
 
 function showBattleScreen() {
-var randoPokemon
-var url = "https://pokedex2.p.rapidapi.com/pokedex/us/";
+	var randoPokemon
+	var url = "https://pokedex2.p.rapidapi.com/pokedex/us/";
 
-fetch(url, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "pokedex2.p.rapidapi.com",
-		"x-rapidapi-key": key
-	}
-}).then(function (response) {
-	return response.json();
-}).then(function (data) {
-	var number = Math.floor(Math.random() * data.length)
-	console.log(number)
-});
+	fetch(url, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "pokedex2.p.rapidapi.com",
+			"x-rapidapi-key": key
+		}
+	}).then(function (response) {
+		return response.json();
+	}).then(function (data) {
+		var number = Math.floor(Math.random() * data.length)
+		console.log(number)
+	});
 
 
 }
