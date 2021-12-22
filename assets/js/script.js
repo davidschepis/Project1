@@ -1,6 +1,6 @@
 var mainSection = $('#mainSection');
 var battleSection = $('#battleSection');
-var key = "98c7599992msh5ea6f0b3a380ff5p13b5bbjsn24e983bd9684";
+var key = "daf5d28d8bmsh62dd27af51040efp16ff14jsn47ca0180b1c4";
 
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
