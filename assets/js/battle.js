@@ -3,6 +3,8 @@ var key = "60fa9a3f98msh0ea03cc33f5cc55p11b3efjsnbaf6d9d62ba8";
 
 var userHealth = 100;
 var compHealth = 100;
+var audioVolume = 0.1; //global volume control
+var battleAudio = new Audio('./assets/music/battle.mp3');
 
 showBattleScreen();//Show pokemon on load
 
@@ -102,7 +104,15 @@ $('body').on('click', '#attackButton', function () {
 function attack(num1, num2) {
     var battleString;
     var audio;
-    audio = new Audio('./assets/music/hit.mp3');
+    var ranNum = Math.floor(Math.random() * 100);
+    if (ranNum > 50) {
+        audio = new Audio('./assets/music/hit.mp3');
+        audio.volume = audioVolume;
+    }
+    else {
+        audio = new Audio('./assets/music/hit2.wav');
+        audio.volume = audioVolume;
+    }
     audio.play();
     battleString = $('#battleText').val();
     $('#battleText').val(battleString + "You rolled a " + num1 + "\nThe comp rolled a " + num2 + "\n");
@@ -154,6 +164,7 @@ function defend(num1, num2) {
     var battleString;
     var audio;
     audio = new Audio('./assets/music/shield.mp3');
+    audio.volume = audioVolume;
     audio.play();
     battleString = $('#battleText').val();
     $('#battleText').val(battleString + "You rolled a " + num1 + "\nThe comp rolled a " + num2 + "\n");
@@ -196,7 +207,9 @@ $('body').on('click', '#defendButton', function () {
 //This function shows the user won and disables the attack and defend button
 function showWin() {
     $('#battleText').val("You're winner!");
+    battleAudio.pause();
     var audio = new Audio('./assets/music/victory.mp3');
+    audio.volume = audioVolume;
     audio.play();
     document.getElementById("attackButton").disabled = true;
     document.getElementById("defendButton").disabled = true;
@@ -205,7 +218,9 @@ function showWin() {
 //This function shows the user lost and disables the attack and defend button
 function showLose() {
     $('#battleText').val("You is loser!");
+    battleAudio.pause();
     var audio = new Audio('./assets/music/lose.mp3');
+    audio.volume = audioVolume;
     audio.play();
     document.getElementById("attackButton").disabled = true;
     document.getElementById("defendButton").disabled = true;
@@ -251,3 +266,8 @@ function scrollBottom() {
     textArea.scrollTop = textArea.scrollHeight;
 }
 
+//This function plays battle music if the corresponding button is clicked
+function playMusic() {
+    battleAudio.volume = audioVolume;
+    battleAudio.play();
+}
