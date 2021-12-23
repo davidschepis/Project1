@@ -1,7 +1,7 @@
-.card {
+#battle .card {
     height: 100%;
     margin-right: 100px;
 }
-#battle {
+/* #battle {
     margin-top: 100px;
-}
+} */
