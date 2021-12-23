@@ -1,5 +1,5 @@
 var mainSection = $('#mainSection');
-var key = "98c7599992msh5ea6f0b3a380ff5p13b5bbjsn24e983bd9684";
+var key = "ad5f3627acmsh82f3da75ebdcec5p10b4bdjsnece019f81848";
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
 document.querySelector
@@ -49,5 +49,9 @@ function showBattleScreen() {
 		console.log(number)
 	});
 
+}
 
+function searchHistory() {
+	let input = document.getElementById("searchText").value;
+	document.write(input)
 }

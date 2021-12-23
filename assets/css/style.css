@@ -6,3 +6,13 @@
 .battleColumn {
     border: solid 1px black;
 }
+
+.sidenavbar {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
