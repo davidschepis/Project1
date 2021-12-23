@@ -1,13 +1,12 @@
-var battle = $('#battle');
+var battle = $('#battle');//main div on battle.html
 var key = "60fa9a3f98msh0ea03cc33f5cc55p11b3efjsnbaf6d9d62ba8";
 
 var userHealth = 100;
 var compHealth = 100;
-var userDefended = false;
 
-showBattleScreen();
+showBattleScreen();//Show pokemon on load
 
-//This function shows two pokemon on the screen and creates the attack and defend button
+//This function shows two pokemon on the screen as cards, giving the users pokemon an attack and defend button
 function showBattleScreen() {
     var url = "https://pokedex2.p.rapidapi.com/pokedex/us/";
     fetch(url, {
@@ -35,6 +34,7 @@ function showBattleScreen() {
     });
 }
 
+//This function searches for the desired pokemon that is stored in local storage, and returns its name and image url
 function pullPokemon(data) {
     for (var i = 0; i < data.length; i++) {
         if (data[i].name === capitalize(localStorage.getItem("pokename"))) {
@@ -44,11 +44,12 @@ function pullPokemon(data) {
     }
 }
 
+//This function simply captilizes the first letter of a string
 function capitalize(name) {
     return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
-
+//This function creates a card based on the data passed in and whether or not the card should be the users, which includes buttons to interact
 function createCard(data, isPLayer) {
     var number = Math.floor(Math.random() * data.length);
     var displayString = "";
@@ -91,10 +92,13 @@ function createCard(data, isPLayer) {
     return displayString;
 }
 
+//Click listener for the attack button, simply calls getDiceRollAttack()
 $('body').on('click', '#attackButton', function () {
     getDiceRollAttack();
 });
 
+//This function handles an attack, if the user rolls higher they damage the comp and vice versa
+//The function also outputs text to the textarea
 function attack(num1, num2) {
     var battleString;
     var audio;
@@ -144,6 +148,8 @@ function attack(num1, num2) {
     }
 }
 
+//This function handles a defend action, raising the users health if they roll higher than the comp
+//The function also outputs whats happening to the text area
 function defend(num1, num2) {
     var battleString;
     var audio;
@@ -182,10 +188,12 @@ function defend(num1, num2) {
     }
 }
 
+//This function listens for the defend button
 $('body').on('click', '#defendButton', function () {
     getDiceRollDefend();
 });
 
+//This function shows the user won and disables the attack and defend button
 function showWin() {
     $('#battleText').val("You're winner!");
     var audio = new Audio('./assets/music/victory.mp3');
@@ -194,7 +202,7 @@ function showWin() {
     document.getElementById("defendButton").disabled = true;
 }
 
-
+//This function shows the user lost and disables the attack and defend button
 function showLose() {
     $('#battleText').val("You is loser!");
     var audio = new Audio('./assets/music/lose.mp3');
@@ -203,6 +211,7 @@ function showLose() {
     document.getElementById("defendButton").disabled = true;
 }
 
+//This function is called when a user clicks the attack button, it gets two dice rolls
 function getDiceRollAttack() {
     fetch("https://dice-roll.p.rapidapi.com/roll/2/d/100", {
         "method": "GET",
@@ -219,6 +228,7 @@ function getDiceRollAttack() {
         });
 }
 
+//This function is called when a user clicks the defend button, it gets two dice rolls
 function getDiceRollDefend() {
     fetch("https://dice-roll.p.rapidapi.com/roll/2/d/100", {
         "method": "GET",
@@ -235,6 +245,7 @@ function getDiceRollDefend() {
         });
 }
 
+//This helper function scrolls the textarea down every time text is added
 function scrollBottom() {
     var textArea = document.getElementById("battleText");
     textArea.scrollTop = textArea.scrollHeight;
