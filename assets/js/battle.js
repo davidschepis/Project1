@@ -3,6 +3,7 @@ var key = "daf5d28d8bmsh62dd27af51040efp16ff14jsn47ca0180b1c4";
 
 var userHealth = 100;
 var compHealth = 100;
+var userDefended = false;
 
 showBattleScreen();
 
@@ -104,27 +105,52 @@ $('body').on('click', '#attackButton', function () {
         showWin();
     }
     else {
-        setTimeout(() => {
-            number = Math.floor(Math.random() * 100);
-            userHealth -= number;
-            if (userHealth <= 0) {
-                userHealth = 0;
-            }
-            $('#playerHealth').val(userHealth);
-            battleString = $('#battleText').val();
-            $('#battleText').val(battleString + "You were hit for " + number + " damage!\n");
-            audio = new Audio('./assets/music/hit2.wav');
-            audio.play();
-            if (userHealth <= 0) {
-                showLose();
-            }
-        }, 2000);
+        compAttack();
     }
 });
 
+function compAttack() {
+    setTimeout(() => {
+        var battleString;
+        var audio;
+        number = Math.floor(Math.random() * 100);
+        if (userDefended) {
+            battleString = $('#battleText').val();
+            $('#battleText').val(battleString + "Your defense weakens the enemy attack!\n");
+            number -= 25;
+            if (number < 0) {
+                number = 0;
+            }
+            userDefended = false;
+        }
+        userHealth -= number;
+        if (userHealth <= 0) {
+            userHealth = 0;
+        }
+        $('#playerHealth').val(userHealth);
+        battleString = $('#battleText').val();
+        $('#battleText').val(battleString + "You were hit for " + number + " damage!\n");
+        audio = new Audio('./assets/music/hit2.wav');
+        audio.play();
+        if (userHealth <= 0) {
+            showLose();
+        }
+    }, 2000);
+}
+
 $('body').on('click', '#defendButton', function () {
+    var audio;
+    var battleString = $('#battleText').val();
+    $('#battleText').val(battleString + "You defended! you gain 50 health!\n");
     userHealth += 50;
-    
+    if (userHealth > 100) {
+        userHealth = 100;
+    }
+    $('#playerHealth').val(userHealth);
+    userDefended = true;
+    audio = new Audio('./assets/music/shield.mp3');
+    audio.play();
+    compAttack();
 });
 
 function showWin() {
