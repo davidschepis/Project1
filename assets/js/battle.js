@@ -1,5 +1,3 @@
-var battleSection1 = $('#battleSection1');
-var battleSection2 = $('#battleSection2');
 var battle = $('#battle');
 var key = "daf5d28d8bmsh62dd27af51040efp16ff14jsn47ca0180b1c4";
 
@@ -91,49 +89,57 @@ function createCard(data, isPLayer) {
 
 $('body').on('click', '#attackButton', function () {
     var number = Math.floor(Math.random() * 100);
+    var audio;
+    var battleString;
     compHealth -= number;
+    if (compHealth <= 0) {
+        compHealth = 0;
+    }
+    $('#compHealth').val(compHealth);
+    battleString = $('#battleText').val();
+    $('#battleText').val(battleString + "You hit for " + number + " damage!\n");
+    audio = new Audio('./assets/music/hit.mp3');
+    audio.play();
     if (compHealth <= 0) {
         showWin();
     }
-    $('#compHealth').val(compHealth);
-    var audio = new Audio('./assets/music/hit.mp3');
-    audio.play();
-    var battleString = $('#battleText').val();
-    $('#battleText').val(battleString + "You hit for " + number + " damage!\n");
-
-    number = Math.floor(Math.random() * 100);
-    userHealth -= number;
-    if (userHealth <= 0) {
-        showLose();
+    else {
+        setTimeout(() => {
+            number = Math.floor(Math.random() * 100);
+            userHealth -= number;
+            if (userHealth <= 0) {
+                userHealth = 0;
+            }
+            $('#playerHealth').val(userHealth);
+            battleString = $('#battleText').val();
+            $('#battleText').val(battleString + "You were hit for " + number + " damage!\n");
+            audio = new Audio('./assets/music/hit2.wav');
+            audio.play();
+            if (userHealth <= 0) {
+                showLose();
+            }
+        }, 2000);
     }
-    $('#playerHealth').val(userHealth);
-    battleString = $('#battleText').val();
-    $('#battleText').val(battleString + "You were hit for " + number + " damage!\n");
 });
 
 $('body').on('click', '#defendButton', function () {
-    // var number = Math.floor(Math.random() * 100);
-    // compHealth -= number;
-    // if (compHealth <= 0) {
-    //     showWin();
-    // }
-    // $('#compHealth').val(compHealth);
-    // var audio = new Audio('./assets/music/hit.mp3');
-    // audio.play();
-
-    // number = Math.floor(Math.random() * 100);
-    // userHealth -= number;
-    // if (userHealth <= 0) {
-    //     showLose();
-    // }
-    // $('#playerHealth').val(userHealth);
+    userHealth += 50;
+    
 });
 
 function showWin() {
-
+    $('#battleText').val("You're winner!");
+    var audio = new Audio('./assets/music/victory.mp3');
+    audio.play();
+    document.getElementById("attackButton").disabled = true;
+    document.getElementById("defendButton").disabled = true;
 }
 
-//THis function
-function showLose() {
 
+function showLose() {
+    $('#battleText').val("You is loser!");
+    var audio = new Audio('./assets/music/lose.mp3');
+    audio.play();
+    document.getElementById("attackButton").disabled = true;
+    document.getElementById("defendButton").disabled = true;
 }
