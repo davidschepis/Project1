@@ -1,3 +1,19 @@
+.card {
+    border: solid;
+    border-style: groove;
+    border-color: gold;
+    border-width: 12px;
+
+}
+
+#searchPage {
+    background: linear-gradient(#b60404, #fff)
+}
+
+.card-image {
+    background: linear-gradient(to bottom, #e9fbf6, #a4bcd4 50%, #5286c7 75%, #0bE91a 75%);;
+}
+
 #battle .card {
     height: 100%;
     margin-right: 100px;
