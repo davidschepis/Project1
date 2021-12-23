@@ -25,12 +25,23 @@ function showBattleScreen() {
         var data2 = pullPokemon(data);
         var card1 = $('<div>');
         var card2 = $('<div>');
+        var vs = $('<div>');
+        var h1 = $('<h1>');
+
         card1.html(createCard(data2, true));
         card2.html(createCard(data, false));
-        card1.addClass("column is-6");
-        card2.addClass("column is-6");
+        h1.text("VS");
+        h1.css("font-size", "100px");
+        vs.css("display", "flex");
+        vs.css("align-items", "center");
 
+        card1.addClass("column is-5");
+        card2.addClass("column is-5");
+        vs.addClass("column is-2");
+
+        vs.append(h1);
         battle.append(card1);
+        battle.append(vs);
         battle.append(card2);
 
     });
