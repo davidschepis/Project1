@@ -3,3 +3,89 @@
     margin-right: 100px;
 }
 
+#btn {
+    background-color: #E01A16;
+    color: white;
+}
+
+#result-1 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-2 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-3 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 20px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-4 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-5 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px; 
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-6 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
