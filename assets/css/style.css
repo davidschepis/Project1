@@ -1,7 +1,11 @@
-#battle {
-    position:absolute;
-    top: 200px;
+.card {
+    height: 100%;
+    margin-right: 100px;
 }
+#battle {
+    margin-top: 100px;
+}
+<<<<<<< HEAD
 
 .battleColumn {
     border: solid 1px black;
@@ -16,3 +20,5 @@
     overflow-x: hidden;
     padding-top: 20px;
   }
+=======
+>>>>>>> cab6fa11f2323b2dd55f47b901c8b6ee08bafb2b
