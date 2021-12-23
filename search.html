@@ -57,16 +57,19 @@
                 <input class="input is-danger is-one-third" type="text" placeholder="Pokemon Name Here" id="searchText">
             </div>
             <div class="column" id="searchBar">
-                <input width="20px" class="button is-info" type="submit" value="Search" id="searchButton">
+                <input width="20px" class="button is-info" type="submit" value="Search" id="searchButton"
+                    onclick="addLi()">
             </div>
         </div>
 
-        <div class id="sidenavbar" style="border:1px solid red; width:400px; height:55px; overflow-y:scroll;">
-            <ul id="history"></ul>
+        <div class="box">
+            <ul id="searchHistory">
+
+            </ul>
         </div>
 
         <div id=result>
-    
+
         </div>
         <button id="battleLink" style="visibility: hidden;">
             <a href="battle.html"><img height="100" width="100"

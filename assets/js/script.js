@@ -1,5 +1,5 @@
 var mainSection = $('#mainSection');
-var key = "ad5f3627acmsh82f3da75ebdcec5p10b4bdjsnece019f81848";
+var key = "79082b5452msh3102612af9c86a0p15907cjsn0e4c9ba9c769";
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
 document.querySelector
@@ -43,7 +43,7 @@ function showBattleButton() {
 
 }
 
-$('body').on('click', '#battleLink', function() {
+$('body').on('click', '#battleLink', function () {
 	localStorage.getItem("pokename")
 	window.location.href = "battle.html";
 
@@ -69,7 +69,16 @@ function showBattleScreen() {
 
 }
 
-function searchHistory() {
-	let input = document.getElementById("searchText").value;
-	document.write(input)
+function addLi() {
+
+	var txtVal = document.getElementById('searchText').value,
+		listNode = document.getElementById('searchHistory'),
+		liNode = document.createElement("LI"),
+		txtNode = document.createTextNode(txtVal);
+
+	liNode.appendChild(txtNode);
+	listNode.appendChild(liNode);
+
 }
+
+
