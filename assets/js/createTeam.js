@@ -1,7 +1,7 @@
+
     var result = document.getElementById("result");
     var key = "60fa9a3f98msh0ea03cc33f5cc55p11b3efjsnbaf6d9d62ba8";
     var generateBtn = document.querySelector("#btn")
-
 
     generateBtn.addEventListener('click', function () {
         showBattleScreen()

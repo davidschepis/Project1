@@ -1,5 +1,5 @@
 var mainSection = $('#mainSection');
-var key = "daf5d28d8bmsh62dd27af51040efp16ff14jsn47ca0180b1c4";
+var key = "60fa9a3f98msh0ea03cc33f5cc55p11b3efjsnbaf6d9d62ba8";
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
 document.querySelector
