@@ -334,3 +334,10 @@ function getIndex(pokename, scores) {
     }
     return -1;
 }
+
+function showScores() {
+    var scores = getScores();
+    for (var i = 0; i < scores.length; i++) {
+        console.log(scores[i]);
+    }
+}
