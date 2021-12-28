@@ -224,6 +224,7 @@ function showWin() {
     audio.play();
     document.getElementById("attackButton").disabled = true;
     document.getElementById("defendButton").disabled = true;
+    saveScore(localStorage.getItem("pokename"), true);
 }
 
 //This function shows the user lost and disables the attack and defend button
@@ -235,6 +236,7 @@ function showLose() {
     audio.play();
     document.getElementById("attackButton").disabled = true;
     document.getElementById("defendButton").disabled = true;
+    saveScore(localStorage.getItem("pokename"), false);
 }
 
 //This function is called when a user clicks the attack button, it gets two dice rolls
@@ -247,7 +249,6 @@ function getDiceRollAttack() {
         }
     })
         .then(response => {
-            // console.log(response);
             return response.json();
         }).then(function (data) {
             attack(data.rolls[0], data.rolls[1]);
@@ -264,7 +265,6 @@ function getDiceRollDefend() {
         }
     })
         .then(response => {
-            // console.log(response);
             return response.json();
         }).then(function (data) {
             defend(data.rolls[0], data.rolls[1]);
@@ -281,4 +281,56 @@ function scrollBottom() {
 function playMusic() {
     battleAudio.volume = audioVolume;
     battleAudio.play();
+}
+
+//This function saves whether the users pokemon won or not into local storage
+function saveScore(pokename, isWinner) {
+    var scores = getScores();
+    if (scores === null) {
+        if (isWinner) {
+            var obj = {name: pokename, wins:1, losses:0};
+            localStorage.setItem("scores", JSON.stringify(obj));
+        }
+        else {
+            var obj = {name: pokename, wins:0, losses:1};
+            localStorage.setItem("scores", JSON.stringify(obj));
+        }
+    } else {
+        scores = [].concat(scores);
+        var index = getIndex(pokename, scores);
+        if (index > -1) {
+            if (isWinner) {
+                scores[index].wins++;
+            }
+            else {
+                scores[index].losses++;
+            }
+            localStorage.setItem("scores", JSON.stringify(scores));
+        }
+        else {
+            if (isWinner) {
+                var obj = {name: pokename, wins:1, losses:0};
+            } else {
+                var obj = {name: pokename, wins:0, losses:1};
+            }
+            var scoresArray = [].concat(scores);
+            scoresArray.push(obj);
+            localStorage.setItem("scores", JSON.stringify(scoresArray));
+        }
+    }
+}
+
+//Returns the parsed scores array from local storage
+function getScores() {
+    return JSON.parse(localStorage.getItem("scores"));
+}
+
+//Returns the index of the desired pokemon, -1 if not found, and 0 if scores is not an array meaning there is only 1 item
+function getIndex(pokename, scores) {
+    for (var i = 0; i < scores.length; i++) {
+        if (scores[i].name === pokename) {
+            return i;
+        }
+    }
+    return -1;
 }
