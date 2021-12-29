@@ -1,6 +1,6 @@
 
     var result = document.getElementById("result");
-    var key = "60fa9a3f98msh0ea03cc33f5cc55p11b3efjsnbaf6d9d62ba8";
+    var key = "525972aca5mshc6f9ab122d83ec0p1e8676jsn73a7bc910ae2";
     var generateBtn = document.querySelector("#btn")
 
     generateBtn.addEventListener('click', function () {

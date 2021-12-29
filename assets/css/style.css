@@ -10,8 +10,9 @@
     background: linear-gradient(#b60404, #fff)
 }
 
-.card-image {
-    background: linear-gradient(to bottom, #e9fbf6, #a4bcd4 50%, #5286c7 75%, #0bE91a 75%);;
+.card-content {
+  border-top: dashed;
+  border-width: 2px;
 }
 
 #battle .card {
