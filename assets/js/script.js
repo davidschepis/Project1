@@ -3,13 +3,11 @@ var key = "525972aca5mshc6f9ab122d83ec0p1e8676jsn73a7bc910ae2";
 
 var bb = document.getElementById("battleLink");
 var battleLinkImg = document.getElementById('result').getAttribute('data-img');
-console.log(battleLinkImg)
 
 
 document.getElementById("searchButton").addEventListener("click", handleSearch);
-document.querySelector
-showBattleScreen();
 
+//Calls API and creates a stylized card on the screen
 function handleSearch() {
 	var pokename = document.getElementById("searchText").value.toLowerCase();
 
@@ -38,46 +36,24 @@ function handleSearch() {
 		for (var i = 0; i < data[0].weakness.length; i++) {
 			outputstring += "<h1>The pokemon's weakness is: " + data[0].weakness[i] + "</h1>";
 		}
-		console.log(outputstring)
+
 
 		document.getElementById("result").innerHTML = outputstring;
 
-		localStorage.setItem("pokename", pokename)
+		localStorage.setItem("pokename", pokename);
 
-		showBattleButton()
+		showBattleButton();
 	});
 }
 
+//Makes battle button visible
 function showBattleButton() {
-	// var bb = document.getElementById("battleLink");
-
-	bb.style.visibility = "visible"
-
+	bb.style.visibility = "visible";
 }
 
+//Saves the pokemons name into local storage and switches webpages
 $('body').on('click', '#battleLink', function () {
-	localStorage.getItem("pokename")
+	localStorage.getItem("pokename");
 	window.location.href = "battle.html";
-
 });
 
-
-function showBattleScreen() {
-	var randoPokemon
-	var url = "https://pokedex2.p.rapidapi.com/pokedex/us/";
-
-	fetch(url, {
-		"method": "GET",
-		"headers": {
-			"x-rapidapi-host": "pokedex2.p.rapidapi.com",
-			"x-rapidapi-key": key
-		}
-	}).then(function (response) {
-		return response.json();
-	}).then(function (data) {
-		var number = Math.floor(Math.random() * data.length)
-		console.log(number)
-	});
-
-
-}

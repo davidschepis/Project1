@@ -224,7 +224,7 @@ function showWin() {
     audio.play();
     document.getElementById("attackButton").disabled = true;
     document.getElementById("defendButton").disabled = true;
-    saveScore(localStorage.getItem("pokename"), true);
+    saveScore(capitalize(localStorage.getItem("pokename")), true);
 }
 
 //This function shows the user lost and disables the attack and defend button
@@ -236,7 +236,7 @@ function showLose() {
     audio.play();
     document.getElementById("attackButton").disabled = true;
     document.getElementById("defendButton").disabled = true;
-    saveScore(localStorage.getItem("pokename"), false);
+    saveScore(capitalize(localStorage.getItem("pokename")), false);
 }
 
 //This function is called when a user clicks the attack button, it gets two dice rolls
@@ -288,11 +288,11 @@ function saveScore(pokename, isWinner) {
     var scores = getScores();
     if (scores === null) {
         if (isWinner) {
-            var obj = {name: pokename, wins:1, losses:0};
+            var obj = { name: pokename, wins: 1, losses: 0 };
             localStorage.setItem("scores", JSON.stringify(obj));
         }
         else {
-            var obj = {name: pokename, wins:0, losses:1};
+            var obj = { name: pokename, wins: 0, losses: 1 };
             localStorage.setItem("scores", JSON.stringify(obj));
         }
     } else {
@@ -309,9 +309,9 @@ function saveScore(pokename, isWinner) {
         }
         else {
             if (isWinner) {
-                var obj = {name: pokename, wins:1, losses:0};
+                var obj = { name: pokename, wins: 1, losses: 0 };
             } else {
-                var obj = {name: pokename, wins:0, losses:1};
+                var obj = { name: pokename, wins: 0, losses: 1 };
             }
             var scoresArray = [].concat(scores);
             scoresArray.push(obj);
@@ -334,7 +334,7 @@ function getIndex(pokename, scores) {
     }
     return -1;
 }
-
+//Helper function for console usage
 function showScores() {
     var scores = getScores();
     for (var i = 0; i < scores.length; i++) {
