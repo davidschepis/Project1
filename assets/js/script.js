@@ -22,11 +22,11 @@ function handleSearch() {
 	}).then(function (response) {
 		return response.json();
 	}).then(function (data) {
-		console.log(data);
-		var outputstring = '<div class="card"><div class="card-image"><figure class="image is-90x100"><img src="' + data[0].ThumbnailImage + '" alt="Placeholder image"></figure></div><div class="card-content"><div class="media"><div class="media-left"><figure class="image is-48x48">' + `<button id="battleLink">
-		<a href="battle.html"><img height="150" width="150" src=${battleLinkImg} alt="battle link img">
-	</a>
-</button>` + '</figure></div><div class="media-content"><p class="title is-4 is-capitalized ">' + pokename + '</p>';
+		//console.log(data);
+		var outputstring = '<div class="card"><div class="card-image"><figure class="image is-90x100"><img src="'
+			+ data[0].ThumbnailImage + '" alt="Pokemon"></figure></div><div class="card-content"><div class="media"><div class="media-left"><figure class="image is-48x48">'
+			+ `<button id="battleLink"><a href="battle.html"><img height="150" width="150" src=${battleLinkImg} alt="battle link img"></a></button>`
+			+ '</figure></div><div class="media-content"><p class="title is-4 is-capitalized ">' + pokename + '</p>';
 
 		outputstring += "<h1>The pokemon's id number is: " + data[0].id + "</h1>";
 
@@ -42,14 +42,9 @@ function handleSearch() {
 
 		localStorage.setItem("pokename", pokename);
 
-		showBattleButton();
 	});
 }
 
-//Makes battle button visible
-function showBattleButton() {
-	bb.style.visibility = "visible";
-}
 
 //Saves the pokemons name into local storage and switches webpages
 $('body').on('click', '#battleLink', function () {
