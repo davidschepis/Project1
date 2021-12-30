@@ -1,16 +1,20 @@
-.card {
+#result .card {
     border: solid;
     border-style: groove;
     border-color: gold;
     border-width: 12px;
+}
 
+#result .card-image{
+  height: 600px;
+  width: 600px;
 }
 
 #searchPage {
     background: linear-gradient(#b60404, #fff)
 }
 
-.card-content {
+#result .card-content {
   border-top: dashed;
   border-width: 2px;
 }
