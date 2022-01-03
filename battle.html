@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -11,10 +11,11 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar" aria-label="main navigation">
         <div class="navbar-brand">
-
-
+            <a class="navbar-item" href="index.html">
+                <img src="./assets/images/logo.png" alt="Pokeball logo">
+            </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -22,28 +23,22 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
-        <a class="navbar-item" href="index.html">
-            <img src="./assets/images/logo.png">
-        </a>
-
-
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="search.html">
                     Search
                 </a>
-
                 <a class="navbar-item" href="createTeam.html">
                     Create My Team
                 </a>
-
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         More
                     </a>
-
                     <div class="navbar-dropdown">
+                        <a class="navbar-item" href="scores.html">
+                            High Score
+                        </a>
                         <a class="navbar-item" href="about.html">
                             About
                         </a>
@@ -56,18 +51,24 @@
         </div>
     </nav>
 
-    <div class="">
-        <div class="columns" id="battle"></div>            
+    <div class="columns is-centered">
+        <div class="column is-5">
+
+        </div>
+        <div class="column is-1">
+            <button class="button is-primary is-light is-large" onclick="playMusic()">Play Music!</button>
+        </div>
+        <div class="column is-6">
+
+        </div>
     </div>
 
-
-
-    <!-- <audio controls>
-        <source src="./assets/music/battle.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio> -->
+    <div class="container">
+        <div class="columns" id="battle"></div>
+    </div>
 
     <script src="assets/js/battle.js"></script>
+    <script src="assets/js/navbar.js"></script>
 </body>
 
 </html>

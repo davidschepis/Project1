@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -11,8 +11,11 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar" aria-label="main navigation">
         <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="./assets/images/logo.png" alt="Pokeball logo">
+            </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -20,9 +23,6 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <a class="navbar-item" href="index.html">
-            <img src="./assets/images/logo.png">
-        </a>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="search.html">
@@ -36,6 +36,9 @@
                         More
                     </a>
                     <div class="navbar-dropdown">
+                        <a class="navbar-item" href="scores.html">
+                            High Score
+                        </a>
                         <a class="navbar-item" href="about.html">
                             About
                         </a>
@@ -48,13 +51,13 @@
         </div>
     </nav>
 
-    <section class="has-text-centered">
+    <div class="has-text-centered">
         <img src="./assets/images/background.jpg" alt="Pokemon background">
-    </section>
+    </div>
 
 
 
-
+    <script src="assets/js/navbar.js"></script>
 </body>
 
 </html>

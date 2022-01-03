@@ -1,11 +1,136 @@
-.card {
+#result .card {
+    border: solid;
+    border-style: groove;
+    border-color: gold;
+    border-width: 12px;
+}
+
+#result .card-image{
+  height: 600px;
+  width: 600px;
+}
+
+#searchPage {
+    background: linear-gradient(#b60404, #fff)
+}
+
+#result .card-content {
+  border-top: dashed;
+  border-width: 2px;
+}
+
+#battle .card {
     height: 100%;
     margin-right: 100px;
 }
-#battle {
-    margin-top: 100px;
+
+#btn {
+    background-color: #E01A16;
+    color: white;
 }
 
+<<<<<<< HEAD
 .battleColumn {
     border: solid 1px black;
 }
+=======
+#result-1 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-2 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-3 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 20px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-4 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-5 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    margin-bottom: 2px; 
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+#result-6 {
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    font-size: 25px;
+    text-align: center;
+  }
+
+
+#questionsDiv{
+  position: relative;
+  text-align: center;
+}
+
+#questionsDiv h1{
+  font-weight: bold;
+  font-size: large;
+  color: red;
+}
+
+#clear {
+  position: relative; 
+  top: 30px;
+  
+}
+>>>>>>> a5df9531cfa85c893fb54aa41ed5c30ccc850a5a
