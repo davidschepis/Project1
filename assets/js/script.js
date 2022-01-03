@@ -1,5 +1,5 @@
 var mainSection = $('#mainSection');
-var key = "525972aca5mshc6f9ab122d83ec0p1e8676jsn73a7bc910ae2";
+var key = "eab5556802msh015a1179aab9ebep125e68jsna19504601964";
 
 var bb = document.getElementById("battleLink");
 var battleLinkImg = document.getElementById('result').getAttribute('data-img');
